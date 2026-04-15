@@ -1,11 +1,10 @@
 import Link from "next/link";
 
 type CardData = {
-  id: string
+  id: string;
   title: string;
   continent: string;
   image: string;
-
 };
 
 type CardProps = CardData & {
@@ -13,45 +12,50 @@ type CardProps = CardData & {
   onToggleSave: (card: CardData) => void;
 };
 
-export default function Card({ 
-  id, 
-  title, 
-  continent, 
-  image, 
+export default function Card({
+  id,
+  title,
+  continent,
+  image,
   isSaved,
-  onToggleSave, 
+  onToggleSave,
 }: CardProps) {
   return (
-    <div className="relative bg-white text-gray-800 rounded-xl shadow-md overflow-hidden p-4 m-2 w-64">
-      
+    <div className="relative w-full overflow-hidden rounded-xl bg-white text-gray-800 shadow-md transition hover:shadow-lg">
       <button
         type="button"
         onClick={() => onToggleSave({ id, title, continent, image })}
-        className={`absolute top-2 right-2 px-3 py-1 rounded text-sm font-medium transition ${
+        className={`absolute right-3 top-3 z-10 rounded px-3 py-1 text-sm font-medium text-white transition ${
           isSaved
-            ? "bg-green-600 text-white hover:bg-green-700"
-            : "bg-blue-500 text-white hover:bg-blue-600"
+            ? "bg-green-600 hover:bg-green-700"
+            : "bg-blue-500 hover:bg-blue-600"
         }`}
       >
         {isSaved ? "Remove" : "Save"}
       </button>
 
-      <Link href={`/destinationpages/${id}`}>
-        <img  
+      <Link href={`/destinationpages/${id}`} className="block">
+        <img
           src={image}
           alt={title}
-          className="w-full h-40 object-cover"
-        >
-        </img>
+          className="h-48 w-full object-cover"
+        />
       </Link>
+
       <div className="p-4">
-      <p className="text-gray-600">{continent}</p>
-      <h2 className="text-lg font-semibold mb-2">{title}</h2>
-      <Link href={`/destinationpages/${id}`}>
-      <p className="rounded  text-sm px-2 py-1 font-medium border inline-block text-grey hover:bg-green-700 hover:text-white">Discover</p>
-      </Link>
+        <p className="mb-1 text-sm font-medium tracking-wide text-gray-500">
+          {continent}
+        </p>
+
+        <h2 className="mb-3 text-lg font-semibold">{title}</h2>
+
+        <Link
+          href={`/destinationpages/${id}`}
+          className="inline-block rounded border px-3 py-1 text-sm font-medium text-gray-700 transition hover:bg-green-700 hover:text-white"
+        >
+          Discover
+        </Link>
       </div>
-      
     </div>
   );
 }

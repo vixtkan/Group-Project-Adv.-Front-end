@@ -1,32 +1,34 @@
 import Link from "next/link";
 
-
 export default function Header() {
   return (
-    <div>
-     
-
-      {/* Navigation */}
-      <nav className="bg-white shadow-md">
-        <div className="max-w-5xl mx-auto flex justify-between items-center p-4">
-          <Link href="/">
-          <h1 className="text-xl font-bold text-blue-600">
+    <header className="w-full bg-white shadow-md">
+      <nav className="flex w-full items-center justify-between px-6 py-5 md:px-10 lg:px-14">
+        <Link href="/" className="shrink-0">
+          <h1 className="text-3xl font-bold tracking-wide text-blue-600">
             Lonely Planet
           </h1>
-          </Link>
+        </Link>
 
-          <div className="flex justify-center gap-8 text-gray-700 font-medium">
-        <Link href="/" className="text-gray-700 hover:text-blue-600">HOME</Link><br></br>
-        <Link href="/destinations" className="text-gray-700 hover:text-blue-600">DESTINATIONS</Link><br></br>
-        <Link href="/trips" className="text-gray-700 hover:text-blue-600">TRIPS</Link><br></br>
-        <Link href="/SavedList" className="text-gray-700 hover:text-blue-600">COLLECTION</Link>
-        <Link href="/aboutus" className="text-gray-700 hover:text-blue-600">ABOUT US</Link>
-        
-        </div>
+        <div className="flex items-center gap-5 text-base font-medium text-gray-700 md:gap-8 lg:text-lg">
+          <Link href="/" className="transition hover:text-blue-600">
+            HOME
+          </Link>
+          <Link href="/destinations" className="transition hover:text-blue-600">
+            DESTINATIONS
+          </Link>
+          <Link href="/trips" className="transition hover:text-blue-600">
+            TRIPS
+          </Link>
+          <Link href="/SavedList" className="transition hover:text-blue-600">
+            COLLECTION
+          </Link>
+          <Link href="/aboutus" className="transition hover:text-blue-600">
+            ABOUT US
+          </Link>
         </div>
       </nav>
-
-    </div>
+    </header>
   );
 }
 

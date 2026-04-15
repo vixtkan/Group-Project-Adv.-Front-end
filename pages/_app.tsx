@@ -5,13 +5,11 @@ import Footer from "@/components/footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800"> 
+    <div className="min-h-screen w-full bg-gray-100 text-gray-800">
       <Header />
-
-      <main className="max-w-5xl mx-auto p-6">
+      <main className="w-full m-0 p-0">
         <Component {...pageProps} />
       </main>
-
       <Footer />
     </div>
   );

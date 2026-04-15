@@ -1,38 +1,40 @@
-import Link from "next/link";
-import Header from "@/components/header";
 import Hero from "@/components/Hero";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div  className="min-h-screen  bg-gray-100">
-     <Hero
+    <div className="min-h-screen bg-gray-100">
+      <Hero
         title="OUR GUIDES. YOUR STORIES."
         subtitle=""
         backgroundImage="/images/background1.webp"
       />
 
-      {/* < Header/> */}
-      {/* <main className="max-w-5xl mx-auto p-6 text-black"> */}
-      <main className="min-h-screen  mx-auto p-6 text-black">
-        
-      <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row">
-  {/* Left content area */}
-  
-  <div className="md:w-1/2">
-    <img className="w-full h-full object-cover min-w-[1000px] " src={"/images/background2.webp"} alt="background2"></img>
-  </div>
+      <main className="w-full text-black">
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 overflow-hidden">
+          <div className="relative h-[320px] md:h-[520px]">
+            <Image
+              src="/images/background2.webp"
+              alt="background2"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
 
-  {/* Right image */}
-  <div className="md:w-1/2">
-    <img className="w-full h-full object-cover min-w-[1000px] " src={"/images/background3.webp"} alt="background3"></img>
-  </div>
-</div>
-    
-
-
+          <div className="relative h-[320px] md:h-[520px]">
+            <Image
+              src="/images/background3.webp"
+              alt="background3"
+              fill
+              priority
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+        </div>
       </main>
-      
-
     </div>
   );
 }
