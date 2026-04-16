@@ -43,3 +43,71 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/b
 # AdvFrontEndGroupProject
 # Advance Front End Group Project
 >>>>>>> 3e37c1a7d8b0ed19c9c1d203b943eeccbdf62735
+
+# Group Project Phase 2
+
+## Project Overview
+This is a travel web application built with Next.js and Tailwind CSS.  
+Users can browse destinations, view destination details, and save destinations for later.
+---
+
+## Components
+
+### Header
+The Header component displays the navigation bar and allows users to move between pages.
+
+### Card
+The Card component is used to display destination preview information such as image, title, and continent.
+
+### Footer
+The Footer component displays footer content across the application.
+
+### SavedList / SavedDestinations
+This component shows destinations saved by the user.
+---
+
+## Routes
+
+### `/`
+Home page of the application.
+
+### `/destinations`
+Displays all destination cards.
+
+### `/destinationpages/[id]`
+Dynamic route that shows detailed information for a selected destination.
+
+### `/saved`
+Displays the user’s saved destinations.
+---
+
+## State Management
+State is managed using React state and props.
+- Saved destinations are stored in component state or lifted state.
+- Data is passed from parent components to child components using props.
+- Event handlers are used to save and remove destinations.
+
+If localStorage is used:
+- Saved destinations are persisted in localStorage so the user does not lose them after refreshing the page.
+---
+
+## Technologies Used
+- Next.js
+- React
+- Tailwind CSS
+- JavaScript / TypeScript
+---
+
+## Screenshots
+
+### Home Page
+![Home Page](public/screenshots/homepage.png)
+
+### Destinations Page
+![Destinations Page](public/screenshots/destinations-page.png)
+
+### Destination Detail Page
+![Destination Detail Page](public/screenshots/destination-detail.png)
+
+### Saved Page
+![Saved Page](public/screenshots/saved-page.png)
